@@ -1,3 +1,4 @@
+# encoding: utf-8
 require 'rubygems'
 require 'sinatra'
 require 'sinatra/reloader'
@@ -26,7 +27,7 @@ post '/visit' do
 
   # запишем в файл то, что ввёл клиент
   f = File.open './public/users.txt', 'a'
-  f.write "User: #{@user_name}, phone: #{@phone}, date and time: #{@date_time}. Baber: #{@baber}.\n"
+  f.write "User: #{@user_name}, phone: #{@phone}, date and time: #{@date_time}, Baber: #{@baber}.\n"
   f.close
 
   erb :message
@@ -42,7 +43,9 @@ post '/admin' do
 
   # проверим логин и пароль, и пускаем внутрь или нет:
   if @login == 'admin' && @password == '12345'
-    @file = File.open("./public/users.txt","r")
+    @logfile = File.open("./public/users.txt", "r:utf-8")
+    @contents = @logfile.read
+    @logfile.close
     erb :watch_result
     # @file.close - должно быть, но тогда не работает. указал в erb
   else

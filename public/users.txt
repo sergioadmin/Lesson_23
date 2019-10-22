@@ -1,4 +1,3 @@
-User: , phone: sdsdsd, date and time: . Baber: Макарыч.
-User: sdghjdfsf, phone: 1111222334, date and time: segfdgdfhgf. Baber: Федорыч.
-User: Stepan, phone: 11=22=3=44=55, date and time: 01/01/2028. Baber: Макарыч.
-User: Stepan, phone: 11=22=3=44=55, date and time: 01/01/2028. Baber: Макарыч.
+User: ФStepan, phone: 1123, date and time: 2233, Baber: dfhgfgdsh.
+User: Lehan, phone: 454, date and time: 44444, Baber: sdgfdfgdf.
+User: Федька, phone: 111-222-333, date and time: 11/11/2019, Baber: Макарыч.

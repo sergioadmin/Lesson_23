@@ -1,10 +1,9 @@
 <h1>Admin Panel (Watch Result)</h1>
 
-
-<table border="1">
-<% @file.each_line do |line| %>
-  <tr><td><%= line %></td></tr>
-<% end %>
+<table class="table table-bordered">
+  <tbody>
+    <% @contents.each_line do |line| %>
+      <tr><td><%= line %></td></tr>
+    <% end %>
+  </tbody>
 </table>
-
-<%= @file.close %>
