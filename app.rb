@@ -17,12 +17,28 @@ end
 
 post '/visit' do
   # user_name, phone, date_time
+  @error  = ''
+  hh = {:user_name => 'имя', :phone => 'телефон', :date_time => 'дату и время посещения'}
   @user_name = params[:user_name]
   @phone = params[:phone]
   @date_time = params[:date_time]
   @baber = params[:baber] 
   @color = params[:color1]
 
+  # if hh{:user_name} == ''
+  #   @error = 'NAME ABCENSE!!!!!'
+  # end
+  @error = hh.select {|key| params[key] == ''}.values.join(", ")
+  @error = "Введите " + @error if @error != ''
+  return erb :visit if @error != ''
+
+    # if params[key] == ''
+    #   @error = value
+    #   return erb :visit
+    # end
+
+  # end
+  
   @title = "Thank you!"
   @message = "Уважаемый #{@user_name}, мы ждём вас #{@date_time} у выбранного парикмахера #{@baber}, color #{@color}."
 
